@@ -18,16 +18,18 @@ body{
     border-radius: 25px;
 }
 
-#answer{
+#answer 
+{
     padding:5px;
     width:fit-content;
     border:1px solid;
     border-radius: 5px;
     cursor:pointer;
 }
-.answer:active{
+
+#answer:active{
     background-color: lightgray;
-    transition-duration: .75s;
+    transition-duration: .25s;
 }
 #selection{
     border:1px solid;

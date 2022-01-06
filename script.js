@@ -43,25 +43,24 @@ function randomResult()
 {
     return randomVal[Math.floor(Math.random() * randomVal.length)];
 }
-const computerSelect = randomResult();
+let computerSelect = randomResult();
 
 let playerScore = 0 ,computerScore = 0;
 let playerResult = document.getElementById("player-score");
 let computerResult = document.getElementById("computer-score");
 let inputBar = document.getElementById("selection");
 let resultBtn = document.getElementById("answer");
+let resetBtn = document.getElementById("reset");
 let scoreContainer = document.getElementById("score-container");
 
 function game()
 {
     let playerInput = document.getElementById("selection").value;
-
     if(playerInput != "")
     {   
-        randomResult();
-        const playerWrite = playerInput.toLowerCase();
-        
-        playRound(playerWrite,computerSelect);
+        var computerSelected = computerSelect;
+        let playerWrite = playerInput.toLowerCase();
+        playRound(playerWrite,computerSelected);
         // console.log(playRound(playerWrite,computerSelect));
         //Count Score depends on player or computer won
         if(scoreId == 1)
@@ -79,6 +78,7 @@ function game()
         {
             inputBar.classList = "hiddenInput";
             resultBtn.classList = "hiddenInput";
+            resetBtn.className = "";
         }
         
         if(playerScore == 5)
@@ -89,8 +89,7 @@ function game()
             showResult.textContent = `You lose and computer beat you with the score of `;
         }
         document.getElementById("selection").value = "";
-        
     }
-    
 }
+
 
